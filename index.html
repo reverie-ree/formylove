@@ -28,7 +28,7 @@
             position: relative;
             z-index: 2; color: #ffffff;
             font-family: 'Georgia', serif;
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             font-style: italic;
             text-align: center;
             pointer-events: none;
@@ -78,17 +78,16 @@
 <body>
 
     <div class="overlay" id="musicOverlay">
-        <button class="envelope-btn" onclick="startEffects()">💌 Open Letter From Akbar</button>
-        <p class="overlay-hint">(Turn up volume • wave to earth playing)</p>
+        <button class="envelope-btn" onclick="startEffects()">💌 from bayi gede ireen</button>
+        <p class="overlay-hint">(Turn up volume • wave to earth - seasons)</p>
     </div>
 
-    <audio id="bgMusic" loop prefetch="auto">
-        <source src="https://openwhyd.org/u/5b14801fb789ef78f0d85942/playlist/0?format=mp3" type="audio/mpeg">
-        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    <audio id="bgMusic" loop preload="auto">
+        <source src="https://files.catbox.moe/rbt7sc.mp3" type="audio/mpeg">
     </audio>
 
     <canvas id="heartCanvas"></canvas>
-    <div class="center-text" id="valentineText">i love my gorgeous vannesa &lt;33</div>
+    <div class="center-text" id="valentineText">i love gorgeous vanessa <33</div>
 
     <script>
         const canvas = document.getElementById('heartCanvas');
@@ -114,9 +113,10 @@
         resizeCanvas();
         window.addEventListener('resize', resizeCanvas);
 
-        const textToRepeat = "i love my gorgeous vannesa <33";
+        // Updated text loop forming the heart shape
+        const textToRepeat = "i love gorgeous vanessa <33";
         const particles = [];
-        const particleCount = 300; 
+        const particleCount = 320; 
 
         function getHeartPoint(t) {
             return {
@@ -134,7 +134,7 @@
             }
             update(time) {
                 const pulse = 1 + Math.sin(time * 3 + this.pulseOffset) * 0.08;
-                const scale = (Math.min(canvas.width, canvas.height) / 30) * pulse;
+                const scale = (Math.min(canvas.width, canvas.height) / 28) * pulse;
                 this.x = canvas.width / 2 + this.basePoint.x * scale;
                 this.y = canvas.height / 2 + this.basePoint.y * scale;
             }
